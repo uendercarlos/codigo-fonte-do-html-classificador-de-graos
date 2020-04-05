@@ -1,0 +1,274 @@
+
+<?php
+session_start();
+
+if (isset($_SESSION["cadastro_concluido"])) {
+
+  header("Location: #openModal");
+
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="shortcut icon" href="images/star.png" type="favicon/ico" /> -->
+
+        <title>Grãos</title>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/owl.theme.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/flexslider.css">
+        <link rel="stylesheet" href="css/pricing.css">
+        <link rel="stylesheet" href="css/main.css">
+
+
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.flexslider.min.js"></script>
+        <script type="text/javascript">
+            $(window).load(function() {
+                $('.flexslider').flexslider({
+                 animation: "slide",
+                 controlsContainer: ".flexslider-container"
+                });
+            });
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script>
+            function initialize() {
+                var mapCanvas = document.getElementById('map-canvas');
+                var mapOptions = {
+                    center: new google.maps.LatLng(24.909439, 91.833800),
+                    zoom: 16,
+                    scrollwheel: false,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(mapCanvas, mapOptions)
+
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(24.909439, 91.833800),
+                    title:"Mamma's Kitchen Restaurant"
+                });
+
+                // To add the marker to the map, call setMap();
+                marker.setMap(map);
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+
+
+    </head>
+    <body data-spy="scroll" data-target="#template-navbar">
+        
+        
+        
+        
+
+        <!--== 4. Navigation ==-->
+        <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Food-fair-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img id="logo" src="images/Logo_main.png" class="logo img-responsive">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="Food-fair-toggle">
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#about">Sobre nós</a></li>
+                        <li><a href="#pricing"></a></li>
+                        <li><a href="#conversa">Fazer Classificação</a></li>
+                        <li><a href="#contact"></a></li>
+                        <li><a href="#email">Enviar  Email</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.row -->
+        </nav>
+        
+
+
+        <!--== 5. Header ==-->
+        <section id="header-slider" class="owl-carousel">
+             
+            <div class="item">
+                
+                <div class="container">
+                    <div class="header-content">
+                        <h1 class="header-title"></h1>  <!--texto da figura do baner principal-->
+                        <p class="header-sub-title"></p>
+                    </div> <!-- /.header-content -->
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="header-content">
+                        <h1 class="header-title"></h1><!--texto da figura do baner principal-->
+                        <p class="header-sub-title"></p>
+                    </div> <!-- /.header-content -->
+                </div>
+            </div>
+           
+        </section>
+        
+
+
+
+        <!--== 6. About us ==-->
+        <section id="about" class="about">
+            <img src="images/icons/about_color.png" class="img-responsive section-icon hidden-sm hidden-xs">
+            <div class="wrapper">
+                <div class="container-fluid">
+                    <div class="row dis-table">
+                        <div class="hidden-xs col-sm-6 section-bg about-bg dis-table-cell">
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 dis-table-cell">
+                            <div class="section-content">
+                                <h2 class="section-content-title">Sobre nós</h2>
+                                <p class="section-content-para">
+                                    Aumente a satisfação dos seus clientes ampliando a capacidade de atendimento do seu negócio. <br>Autonomia na construção e cuidado dos chatbots
+                                    Descomplique os processos de atendimento. Crie chatbots inteligentes capazes de realizar interações humanizadas com os seus clientes.
+
+                                </p>
+                                <p class="section-content-para">
+                                    Valorizamos o comprometimento e a inovação em qualidade, motivando as pessoas através da integridade para o desenvolvimento pessoal.
+                                </p>
+                            </div> <!-- /.section-content -->
+                        </div>
+                    </div> <!-- /.row -->
+                </div> <!-- /.container-fluid -->
+            </div> <!-- /.wrapper -->
+        </section> <!-- /#about -->
+
+<section id="conversa" class="local">
+    <section class="contact-form">
+        <div class="container">
+            <div class="row">
+                <div align="center">
+                 <h3>Faça uma classifição de grãos ou um desconto na carga com nossa atendente virtual Caruncha (OBS: No momento só a classificação do grão soja (opção 1) está em funcionamento)</h3>
+                </div>
+                
+                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                    <div class="row">
+                       
+                            <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+                                <div class="text-center">
+                                   
+                                    <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/2aeec709-900d-4d8b-a579-f10476c28292"></iframe>
+    
+                                </div>
+                            </div>
+                        
+                      </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    </section>
+
+<section id="contato" class="contato">
+   
+    </section>
+
+
+
+
+
+
+<br><br><br><br><br>
+
+
+
+ <section id="email" class="local">
+        <section class="contact-form">
+            <div class="container">
+                <div class="row">
+                    <div align="center">
+                     <h2>Se quiser pode enviar uma mensagem para nós</h2>
+                    </div>
+                    
+                    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                        <div class="row">
+                           
+                             <form class="contact-form" method="post" action="envia_email_post.php">
+                                 
+                                 
+                                
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                                <input type="text" class="form-control reserve-form empty iconified" name="Nome" id="Nome" required="required" placeholder="  &#xf007;  Nome">
+                                </div>
+                                            
+                                     <div class="form-group">
+                                                <input type="tel" class="form-control reserve-form empty iconified" name="Email" id="Email" required="required" placeholder="  &#xf095;  Telefone">
+                                     </div>
+                                   
+                                </div>
+
+                               <div class="col-md-12 col-sm-12">
+                                            <textarea type="text" name="Mensagem" class="form-control reserve-form empty iconified" id="Mensagem" rows="3" required="required" placeholder="  &#xf086; Digite aqui sua mensagem"></textarea>
+                                 </div>
+
+                                <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
+                                    <div class="text-center">
+                                        <button type="submit" id="submit" name="submit" class="btn btn-send">Enviar </button>
+                                    </div>
+                                </div>
+                            </form>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
+
+   <section id="contato" class="contato">
+       
+        </section>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="copyright text-center">
+                            <p>
+                                &copy; Copyright, 2019 <a href="#">Uender Carlos.</a> <a href=""  target=""></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mixitup.min.js" ></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/jquery.validate.js"></script>
+        <script type="text/javascript" src="js/jquery.hoverdir.js"></script>
+        <script type="text/javascript" src="js/jQuery.scrollSpeed.js"></script>
+        <script src="js/script.js"></script>
+        
+
+    </body>
+</html>
+<?php
+unset($_SESSION["cadastro_concluido"]);
+?>
